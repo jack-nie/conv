@@ -1,0 +1,20 @@
+<%= form_with(model: excel, local: true) do |form| %>
+  <% if excel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(excel.errors.count, "error") %> prohibited this excel from being saved:</h2>
+
+      <ul>
+        <% excel.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.file_field :excel1%>
+  <%= form.file_field :excel2%>
+  <%= form.file_field :excel3%>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
